@@ -296,7 +296,7 @@ fn initialize_chain_and_contract() -> (concordium_smart_contract_testing::Chain,
     chain.create_account(Account::new(BOB, ACC_INITIAL_BALANCE));
 
     // Load and deploy the module.
-    let module = module_load_v1("concordium-out/module.wasm.v1").expect("Module exists");
+    let module = module_load_v1("module.wasm.v1").expect("Module exists");
     let deployment = chain.module_deploy_v1(SIGNER, ALICE, module).expect("Deploy valid module");
 
     // Initialize the auction contract.
